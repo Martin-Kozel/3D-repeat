@@ -463,88 +463,18 @@ void Game::run()
 				isRunning = false;
 			}
 
-			// Player Rotation
-			// Check for keyboard input for model rotation
-			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-			{
-				// Rotate the model upwards around the y-axis
-				game_object[0]->setModelMatrix(rotate(game_object[0]->getModelMatrix(), 0.01f, glm::vec3(0.0f, 1.0f, 0.0f)));// Rotate
-			}
-
-			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-			{
-				// Rotate the model upwards around the y-axis
-				game_object[0]->setModelMatrix(rotate(game_object[0]->getModelMatrix(), -0.01f, glm::vec3(0.0f, 1.0f, 0.0f)));// Rotate
-			}
-
-			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-			{
-				// Rotate the model upwards around the x-axis
-				game_object[0]->setModelMatrix(rotate(game_object[0]->getModelMatrix(), -0.01f, glm::vec3(1.0f, 0.0f, 0.0f)));// Rotate
-			}
-
-			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-			{
-				// Rotate the model downwards around the x-axis
-				game_object[0]->setModelMatrix(rotate(game_object[0]->getModelMatrix(), 0.01f, glm::vec3(1.0f, 0.0f, 0.0f)));// Rotate
-			}
-
-			// NPC Translation
 			// Check for keyboard input for model translation
-			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-			{
-				// Translate the model upwards about the y-axis
-				game_object[1]->setModelMatrix(translate(game_object[1]->getModelMatrix(), glm::vec3(0.0f, 0.1f, 0.0f)));// Translate UP
-			}
-
-			// Check for keyboard input for model translation
-			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-			{
-				// Translate the model downwards along the y-axis
-				game_object[1]->setModelMatrix(translate(game_object[1]->getModelMatrix(), glm::vec3(0.0f, -0.1f, 0.0f)));// Translate Down
-			}
-
-			// Check for keyboard input for model translation
-			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 			{
 				// Translate the model leftwards along the x-axis
-				game_object[1]->setModelMatrix(translate(game_object[1]->getModelMatrix(), glm::vec3(-0.1f, 0.0f, 0.0f)));// Translate Left
+				game_object[0]->setModelMatrix(translate(game_object[0]->getModelMatrix(), glm::vec3(-0.1f, 0.0f, 0.0f)));// Translate Left
 			}
 
 			// Check for keyboard input for model translation
-			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 			{
 				// Translate the model rightwards along the x-axis
-				game_object[1]->setModelMatrix(translate(game_object[1]->getModelMatrix(), glm::vec3(0.1f, 0.0f, 0.0f)));// Translate Right
-			}
-
-			// Boss Translation
-			// Check for keyboard input for model translation
-			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num8) || sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad8))
-			{
-				// Translate the model upwards about the y-axis
-				game_object[2]->setModelMatrix(translate(game_object[2]->getModelMatrix(), glm::vec3(0.0f, 0.1f, 0.0f)));// Translate UP
-			}
-
-			// Check for keyboard input for model translation
-			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2) || sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad2))
-			{
-				// Translate the model downwards along the y-axis
-				game_object[2]->setModelMatrix(translate(game_object[2]->getModelMatrix(), glm::vec3(0.0f, -0.1f, 0.0f)));// Translate Down
-			}
-
-			// Check for keyboard input for model translation
-			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4) || sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad4))
-			{
-				// Translate the model leftwards along the x-axis
-				game_object[2]->setModelMatrix(translate(game_object[2]->getModelMatrix(), glm::vec3(-0.1f, 0.0f, 0.0f)));// Translate Left
-			}
-
-			// Check for keyboard input for model translation
-			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6) || sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad6))
-			{
-				// Translate the model rightwards along the x-axis
-				game_object[2]->setModelMatrix(translate(game_object[2]->getModelMatrix(), glm::vec3(0.1f, 0.0f, 0.0f)));// Translate Right
+				game_object[0]->setModelMatrix(translate(game_object[0]->getModelMatrix(), glm::vec3(0.1f, 0.0f, 0.0f)));// Translate Right
 			}
 			
 			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
