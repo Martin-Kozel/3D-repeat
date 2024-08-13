@@ -1,8 +1,3 @@
-/**
- * @file Game.cpp
- * @brief This file contains the implementation of the Game class.
- */
-
 #include <./include/Debug.h>	 // Include Debug header file
 #include <./include/Cube.h>		 // Include Cube header file
 #include <./include/Game.h>		 // Include Game header file
@@ -12,25 +7,6 @@
 #define STB_IMAGE_IMPLEMENTATION // Define STB_IMAGE_IMPLEMENTATION only once
 #include <./include/stb_image.h> // Include single file header for loading images
 
-/**
- * @brief Converts a given number to its string representation.
- *
- * This function takes a numeric value of type T and converts it into its string representation.
- * Helper Template function to convert Number to String for HUD
- *
- * @tparam T The type of the input number. It can be any numeric type supported by the stringstream.
- * @param number The numeric value to be converted to a string.
- * @return A string representation of the input number.
- *
- * @note This function utilizes a stringstream to perform the conversion, ensuring compatibility with various numeric types.
- * @warning Beware of potential precision loss or formatting issues when converting floating-point numbers.
- *
- * Example usage:
- * @code
- * int num = 123;
- * string numString = toString(num); // numString will be "123"
- * @endcode
- */
 template <typename T>
 string toString(T number)
 {
@@ -56,14 +32,6 @@ GLenum error; // OpenGL Error Code
 
 // Filename for texture
 const string filename = "./assets/textures/grid.tga";
-// Please see ../assets/textures/ for more textures
-// const string filename = "./assets/textures/coordinates.tga";
-// const string filename = "./assets/textures/cube.tga";
-// const string filename = "./assets/textures/grid_wip.tga";
-// const string filename = "./assets/textures/minecraft.tga";
-// const string filename = "./assets/textures/texture.tga";
-// const string filename = "./assets/textures/texture_2.tga";
-// const string filename = "../assets/textures/uvtemplate.tga";
 
 int width;						 // width of texture
 int height;						 // height of texture
@@ -125,11 +93,12 @@ void Game::initialise()
 
 	DEBUG_MSG("\n******** Init GameObjects STARTS ********\n");
 
+
 	game_object[0] = new GameObject(TYPE::PLAYER);
 	game_object[0]->setPosition(vec3(0.0001f, 0.0f, 0.0f));
 
 	game_object[1] = new GameObject(TYPE::NPC);
-	game_object[1]->setPosition(vec3(0.0003f, 0.0f, 0.0f));
+	game_object[1]->setPosition(vec3(0.0003f, 0.0f, -10.0f));
 
 	game_object[2] = new GameObject(TYPE::BOSS);
 	game_object[2]->setPosition(vec3(0.0003f, 0.0f, 0.0f));
